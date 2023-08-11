@@ -1,0 +1,132 @@
+body {
+		background-color: #0c0c0c;
+		text-align: center;
+	}
+	.color-white {
+		color: white;
+	}
+	div.fade-in {
+		animation:fadeInUp 1.5s ease backwards;
+	}
+	@keyframes fadeInUp{
+		0%{transform:translate(0px, 100px); opacity: 0;}
+		100%{transform:translate(0px, 0); opacity: 1;}
+	}
+	img.avatar {
+		border-radius: 30%;
+		height: 120px;
+		width: 120px;
+		object-fit: cover;
+		background: var(--primary);
+		transition: border-color .5s,box-shadow .5s;
+	}
+	div.promo {
+		width: inherit;
+		margin: auto;
+	}
+	a.link {
+		text-decoration: none;
+		cursor: pointer;
+		height: 50px;
+		font-size: 18px;
+		font-weight: 500;
+		color: white;
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  		border-radius: 5px;
+  		transition: .2s ease-in-out 0s;
+	}
+	a.link:hover {
+		transform: scale(0.95);
+	}
+	a.bet {
+		background: url('../imgs/bet.png') no-repeat center;
+		background-size: contain;
+  		background-color: lightgrey;
+	}
+	a.twitch {
+		background-color: #9147fe;
+	}
+	a.instagram {
+		background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);;
+	}
+	a.tiktok, a.twitter {
+		background-color: black;
+		border: 1px solid white;
+	}
+	a.youtube {
+		background-color: #f70000;
+	}
+	a.discord {
+		background-color: #7289da;
+	}
+	a.info {
+		background-color: lightcoral;
+	}
+	svg.logo {
+		margin-right: 5px;
+		cursor: pointer;
+		transition: border-color .5s,box-shadow .5s;
+	}
+	svg.logo:hover {
+		transform: scale(1.25);
+	}
+	span.small-text {
+		margin-left: 2px;
+	}
+	.w-70 {
+		width: 70%;
+	}
+	div#leftSection {
+		margin: auto;
+	}
+	div#rightSection {
+		background-color: white;
+		height: 360px;
+		border-radius: 10px;
+		overflow-y: scroll;
+		box-shadow: 0px 4px 20px 4px lightgrey;
+	}
+	.small-text {
+		font-size: 10px;
+	}
+	ol {
+		text-align: left;
+	}
+	button.dismissBtn {
+		border: unset;
+		background-color: unset;
+	}
+
+	.info-icon {
+		margin-left: 5px;
+		z-index: 1000;
+	}
+	button.discord {
+		background-color: #7289da;
+		transition: .2s ease-in-out 0s;
+		border: unset;
+	}
+	button.discord:hover {
+		background-color:  #7289da;
+		transform: scale(0.95);
+		border: unset;
+	}
+	footer {
+	}
+	.min-vh-100 {
+		min-height: 100%;
+	}
+	div#main-section {
+		margin-top: 8em;
+	}
+	#infoModal {
+		text-align: justify;
+	}
+	div.cright-header {
+		margin-top: 1px;
+		text-align: center;
+		color: white;
+		font-size: 8px;
+	}
