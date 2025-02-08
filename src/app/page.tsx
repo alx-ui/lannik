@@ -28,8 +28,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen w-full flex items-center justify-center">
-      <div className="flex flex-col items-center justify-center w-full max-w-sm p-4">
+    <main className="min-h-screen w-full flex flex-col items-center">
+      <div className="flex flex-col items-center justify-center w-full max-w-sm p-4 mt-8">
         <div className="relative">
           <Image
             src={profile}
@@ -105,9 +105,8 @@ export default function Home() {
           Discord
         </SocialButton>
       </div>
-
-      <footer className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-xs text-center text-muted-foreground">
-        &copy; {new Date().getFullYear()} Lannik1 by{' '}
+      <footer className="w-full text-center py-4 text-sm text-muted-foreground mt-auto">
+        © {new Date().getFullYear()} Lannik1 by{' '}
         <a href="https://ialexanderbrito.dev" target="_blank" rel="noopener noreferrer">
           ialexanderbrito
         </a>
