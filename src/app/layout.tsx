@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 const thumbnail = {
-  url: 'https://guizzle.com.br/og.jpg',
+  url: 'https://lannik.com.br/og.jpg',
   width: 1200,
   height: 630,
   alt: 'Lannik',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   openGraph: {
     ...defaultMetadata,
     type: 'website',
-    url: 'https://guizzle.com.br',
-    siteName: 'GUIZZLE',
+    url: 'https://lannik.com.br',
+    siteName: 'LANNIK',
   },
   twitter: {
     ...defaultMetadata,
