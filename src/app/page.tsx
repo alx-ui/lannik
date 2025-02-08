@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 import papigames from '@/assets/papigames.svg';
 import profile from '@/assets/profile.jpg';
-import SocialButton from '@/components/SocialButton';
+import SocialButton from '@/components/social-button';
 
 export default function Home() {
   const [isLive, setIsLive] = useState(false);
@@ -28,7 +28,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-[#171817] text-white">
+    <main className="min-h-screen w-full flex items-center justify-center">
       <div className="flex flex-col items-center justify-center w-full max-w-sm p-4">
         <div className="relative">
           <Image
