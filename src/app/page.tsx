@@ -105,6 +105,13 @@ export default function Home() {
           Discord
         </SocialButton>
       </div>
+
+      <footer className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-xs text-center text-muted-foreground">
+        &copy; {new Date().getFullYear()} Lannik1 by{' '}
+        <a href="https://ialexanderbrito.dev" target="_blank" rel="noopener noreferrer">
+          ialexanderbrito
+        </a>
+      </footer>
     </main>
   );
 }
