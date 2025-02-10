@@ -16,18 +16,19 @@ export default function Home() {
   useEffect(() => {
     const checkTwitchStatus = async () => {
       try {
-        const response = await fetch('/api/twitch-status');
+        const response = await fetch('/.netlify/functions/twitchStatus');
         const data = await response.json();
         setIsLive(data.isLive);
       } catch (error) {
         console.error('Erro ao verificar status da Twitch:', error);
+        setIsLive(false);
       } finally {
         setIsLoading(false);
       }
     };
 
     checkTwitchStatus();
-    const interval = setInterval(checkTwitchStatus, 60000);
+    const interval = setInterval(checkTwitchStatus, 30000); // Verificar a cada 30 segundos
     return () => clearInterval(interval);
   }, []);
 
