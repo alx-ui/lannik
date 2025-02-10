@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 import papigames from '@/assets/papigames.svg';
 import profile from '@/assets/profile.jpg';
+import { Skeleton } from '@/components/skeleton';
 import SocialButton from '@/components/social-button';
 
 export default function Home() {
@@ -32,9 +33,17 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <main className="min-h-screen w-full flex flex-col items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-700"></div>
-        <p className="mt-4 text-sm text-muted-foreground">Carregando...</p>
+      <main className="min-h-screen w-full flex flex-col items-center">
+        <div className="flex flex-col items-center justify-center w-full max-w-sm p-4 mt-8">
+          <div className="relative">
+            <Skeleton className="w-48 h-48 rounded-full mb-6" />
+          </div>
+          <Skeleton className="h-8 w-32 mb-8 rounded-lg" />
+
+          {[...Array(8)].map((_, i) => (
+            <Skeleton key={i} className="h-12 w-full mb-4 rounded-lg" />
+          ))}
+        </div>
       </main>
     );
   }
