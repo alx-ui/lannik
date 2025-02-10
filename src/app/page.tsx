@@ -10,6 +10,7 @@ import SocialButton from '@/components/social-button';
 
 export default function Home() {
   const [isLive, setIsLive] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const checkTwitchStatus = async () => {
@@ -19,6 +20,8 @@ export default function Home() {
         setIsLive(data.isLive);
       } catch (error) {
         console.error('Erro ao verificar status da Twitch:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -26,6 +29,15 @@ export default function Home() {
     const interval = setInterval(checkTwitchStatus, 60000);
     return () => clearInterval(interval);
   }, []);
+
+  if (isLoading) {
+    return (
+      <main className="min-h-screen w-full flex flex-col items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-700"></div>
+        <p className="mt-4 text-sm text-muted-foreground">Carregando...</p>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen w-full flex flex-col items-center">
