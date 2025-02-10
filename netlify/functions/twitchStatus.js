@@ -1,10 +1,18 @@
-const fetch = require('node-fetch');
+let fetch;
 
 let cachedData = null;
 let lastFetch = null;
 const CACHE_DURATION = 30000; // 30 segundos
 
+async function initializeFetch() {
+  if (!fetch) {
+    const nodeFetch = await import('node-fetch');
+    fetch = nodeFetch.default;
+  }
+}
+
 async function getTwitchToken() {
+  await initializeFetch();
   const response = await fetch('https://id.twitch.tv/oauth2/token', {
     method: 'POST',
     body: new URLSearchParams({
@@ -18,6 +26,8 @@ async function getTwitchToken() {
 }
 
 exports.handler = async function () {
+  await initializeFetch();
+
   if (cachedData && lastFetch && Date.now() - lastFetch < CACHE_DURATION) {
     return {
       statusCode: 200,
