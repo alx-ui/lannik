@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { FaXTwitter, FaTwitch, FaInstagram, FaTiktok, FaYoutube, FaDiscord } from 'react-icons/fa6';
+import { FaXTwitter, FaTwitch, FaInstagram, FaTiktok, FaYoutube, FaDiscord, FaWhatsapp } from 'react-icons/fa6';
 
 import Image from 'next/image';
 
@@ -54,6 +54,15 @@ export default function Home() {
           icon={<Image src={papigames} alt="Papigames" width={24} height={24} className="text-white" />}
         >
           Papigames
+        </SocialButton>
+
+        <SocialButton
+          href="https://chat.whatsapp.com/F2kQeOsXctq8ElzhOSzQFx"
+          bgColor="#25D366"
+          icon={<FaWhatsapp size={24} className="text-white" />}
+          className="animate-pulse border-2 border-green-500"
+        >
+          🎯 BANCAS GRÁTIS
         </SocialButton>
 
         <SocialButton
