@@ -43,7 +43,20 @@ export default function Home() {
           </div>
           <Skeleton className="h-8 w-32 mb-8 rounded-lg" />
 
-          {[...Array(8)].map((_, i) => (
+          {/* Layout para telas >= 320px */}
+          <div className="hidden min-[320px]:grid grid-cols-2 gap-4 w-full mb-4">
+            <Skeleton className="h-32 w-full rounded-lg" />
+            <Skeleton className="h-32 w-full rounded-lg" />
+          </div>
+
+          {/* Layout para telas < 320px */}
+          <div className="min-[320px]:hidden w-full space-y-4 mb-4">
+            <Skeleton className="h-12 w-full rounded-lg" />
+            <Skeleton className="h-12 w-full rounded-lg" />
+          </div>
+
+          {/* Botões comuns para ambos os layouts */}
+          {[...Array(6)].map((_, i) => (
             <Skeleton key={i} className="h-12 w-full mb-4 rounded-lg" />
           ))}
         </div>
