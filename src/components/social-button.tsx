@@ -27,7 +27,7 @@ export default function SocialButton({
         ${isLive ? 'animate-pulse' : ''} ${className}`}
     >
       {icon}
-      {children}
+      <span className="text-center flex-1">{children}</span>
     </a>
   );
 }
