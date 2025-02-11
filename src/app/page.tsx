@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 import papigames from '@/assets/papigames.svg';
 import profile from '@/assets/profile.jpg';
+import { Pulse } from '@/components/pulse';
 import { Skeleton } from '@/components/skeleton';
 import SocialButton from '@/components/social-button';
 
@@ -62,9 +63,15 @@ export default function Home() {
           />
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
             {isLive ? (
-              <div className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium">AO VIVO</div>
+              <div className="bg-zinc-900/80 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-2 border border-green-500">
+                <Pulse color="green" />
+                AO VIVO
+              </div>
             ) : (
-              <div className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium">OFFLINE</div>
+              <div className="bg-zinc-900/80 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-2 border border-red-500">
+                <Pulse color="red" />
+                OFFLINE
+              </div>
             )}
           </div>
         </div>
