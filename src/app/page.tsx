@@ -4,12 +4,10 @@ import { FaXTwitter, FaTwitch, FaInstagram, FaTiktok, FaYoutube, FaDiscord, FaWh
 
 import Image from 'next/image';
 
-import papigames from '@/assets/papigames.svg';
 import profile from '@/assets/profile.jpg';
 import { Pulse } from '@/components/pulse';
 import { Skeleton } from '@/components/skeleton';
 import SocialButton from '@/components/social-button';
-import SocialButtonSquare from '@/components/social-button-square';
 
 export default function Home() {
   const [isLive, setIsLive] = useState(false);
@@ -43,20 +41,7 @@ export default function Home() {
           </div>
           <Skeleton className="h-8 w-32 mb-8 rounded-lg" />
 
-          {/* Layout para telas >= 320px */}
-          <div className="hidden min-[320px]:grid grid-cols-2 gap-4 w-full mb-4">
-            <Skeleton className="h-32 w-full rounded-lg" />
-            <Skeleton className="h-32 w-full rounded-lg" />
-          </div>
-
-          {/* Layout para telas < 320px */}
-          <div className="min-[320px]:hidden w-full space-y-4 mb-4">
-            <Skeleton className="h-12 w-full rounded-lg" />
-            <Skeleton className="h-12 w-full rounded-lg" />
-          </div>
-
-          {/* Botões comuns para ambos os layouts */}
-          {[...Array(6)].map((_, i) => (
+          {[...Array(7)].map((_, i) => (
             <Skeleton key={i} className="h-12 w-full mb-4 rounded-lg" />
           ))}
         </div>
@@ -91,43 +76,14 @@ export default function Home() {
         </div>
         <h1 className="text-2xl font-bold mb-8">@lannik1</h1>
 
-        <div className="hidden min-[320px]:grid grid-cols-2 gap-4 w-full mb-4">
-          <SocialButtonSquare
-            href="https://papigames.bet.br/lannik"
-            bgColor="#161a1e"
-            icon={<Image src={papigames} alt="Papigames" width={82} height={82} className="text-white" />}
-          >
-            Papigames
-          </SocialButtonSquare>
-
-          <SocialButtonSquare
-            href="https://chat.whatsapp.com/F2kQeOsXctq8ElzhOSzQFx"
-            bgColor="#25D366"
-            icon={<FaWhatsapp size={48} className="text-white" />}
-            className="animate-pulse border-2 border-green-500"
-          >
-            🎯 Bancas Grátis
-          </SocialButtonSquare>
-        </div>
-
-        <div className="min-[320px]:hidden w-full">
-          <SocialButton
-            href="https://papigames.bet.br/lannik"
-            bgColor="#161a1e"
-            icon={<Image src={papigames} alt="Papigames" width={48} height={48} className="text-white" />}
-          >
-            Papigames
-          </SocialButton>
-
-          <SocialButton
-            href="https://chat.whatsapp.com/F2kQeOsXctq8ElzhOSzQFx"
-            bgColor="#25D366"
-            icon={<FaWhatsapp size={24} className="text-white" />}
-            className="animate-pulse border-2 border-green-500"
-          >
-            🎯 Bancas Grátis
-          </SocialButton>
-        </div>
+        <SocialButton
+          href="https://chat.whatsapp.com/F2kQeOsXctq8ElzhOSzQFx"
+          bgColor="#25D366"
+          icon={<FaWhatsapp size={24} className="text-white" />}
+          className="animate-pulse border-2 border-green-500"
+        >
+          🎯 Bancas Grátis
+        </SocialButton>
 
         <SocialButton
           href="https://twitch.tv/lannik1"
