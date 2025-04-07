@@ -4,10 +4,12 @@ import { FaXTwitter, FaTwitch, FaInstagram, FaTiktok, FaYoutube, FaDiscord, FaWh
 
 import Image from 'next/image';
 
+import onabet from '@/assets/onabet.png';
 import profile from '@/assets/profile.jpg';
 import { Pulse } from '@/components/pulse';
 import { Skeleton } from '@/components/skeleton';
 import SocialButton from '@/components/social-button';
+import SocialButtonSquare from '@/components/social-button-square';
 
 export default function Home() {
   const [isLive, setIsLive] = useState(false);
@@ -76,14 +78,43 @@ export default function Home() {
         </div>
         <h1 className="text-2xl font-bold mb-8">@lannik1</h1>
 
-        <SocialButton
-          href="https://chat.whatsapp.com/F2kQeOsXctq8ElzhOSzQFx"
-          bgColor="#25D366"
-          icon={<FaWhatsapp size={24} className="text-white" />}
-          className="animate-pulse border-2 border-green-500"
-        >
-          🎯 Bancas Grátis
-        </SocialButton>
+        <div className="hidden min-[320px]:grid grid-cols-2 gap-4 w-full mb-4">
+          <SocialButtonSquare
+            href="https://onabet.cxclick.com/visit/?bta=120399&brand=onabet"
+            bgColor="#161a1e"
+            icon={<Image src={onabet} alt="Onabet" width={96} height={96} className="text-white" />}
+          >
+            Onabet
+          </SocialButtonSquare>
+
+          <SocialButtonSquare
+            href="https://chat.whatsapp.com/F2kQeOsXctq8ElzhOSzQFx"
+            bgColor="#25D366"
+            icon={<FaWhatsapp size={48} className="text-white" />}
+            className="animate-pulse border-2 border-green-500"
+          >
+            🎯 Bancas Grátis
+          </SocialButtonSquare>
+        </div>
+
+        <div className="min-[320px]:hidden w-full">
+          <SocialButton
+            href="https://onabet.cxclick.com/visit/?bta=120399&brand=onabet"
+            bgColor="#161a1e"
+            icon={<Image src={onabet} alt="Onabet" width={48} height={48} className="text-white" />}
+          >
+            Onabet
+          </SocialButton>
+
+          <SocialButton
+            href="https://chat.whatsapp.com/F2kQeOsXctq8ElzhOSzQFx"
+            bgColor="#25D366"
+            icon={<FaWhatsapp size={24} className="text-white" />}
+            className="animate-pulse border-2 border-green-500"
+          >
+            🎯 Bancas Grátis
+          </SocialButton>
+        </div>
 
         <SocialButton
           href="https://twitch.tv/lannik1"
