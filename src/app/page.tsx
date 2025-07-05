@@ -142,7 +142,7 @@ export default function Home() {
         </SocialButton>
 
         <SocialButton
-          href="https://www.tiktok.com/@lannik_"
+          href="https://www.tiktok.com/@lannikcortes"
           bgColor="#000000"
           icon={<FaTiktok size={24} className="text-white" />}
         >
