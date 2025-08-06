@@ -4,6 +4,7 @@ import { FaXTwitter, FaTwitch, FaInstagram, FaTiktok, FaYoutube, FaDiscord, FaWh
 
 import Image from 'next/image';
 
+import kick from '@/assets/kick.png';
 import onabet from '@/assets/onabet.png';
 import profile from '@/assets/profile.jpg';
 import { Pulse } from '@/components/pulse';
@@ -12,7 +13,8 @@ import SocialButton from '@/components/social-button';
 import SocialButtonSquare from '@/components/social-button-square';
 
 export default function Home() {
-  const [isLive, setIsLive] = useState(false);
+  const [isLiveTwitch, setIsLiveTwitch] = useState(false);
+  const [isLiveKick, setIsLiveKick] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -20,17 +22,34 @@ export default function Home() {
       try {
         const response = await fetch('/.netlify/functions/twitchStatus');
         const data = await response.json();
-        setIsLive(data.isLive);
+        setIsLiveTwitch(data.isLive);
       } catch (error) {
         console.error('Erro ao verificar status da Twitch:', error);
-        setIsLive(false);
+        setIsLiveTwitch(false);
       } finally {
         setIsLoading(false);
       }
     };
 
+    const checkKickStatus = async () => {
+      try {
+        const response = await fetch('/.netlify/functions/kickStatus');
+        const data = await response.json();
+        setIsLiveKick(data.isLive);
+      } catch (error) {
+        console.error('Erro ao verificar status da Kick:', error);
+        setIsLiveKick(false);
+      }
+    };
+
     checkTwitchStatus();
-    const interval = setInterval(checkTwitchStatus, 30000);
+    checkKickStatus();
+
+    // Atualiza o status a cada 30 segundos
+    const interval = setInterval(() => {
+      checkTwitchStatus();
+      checkKickStatus();
+    }, 30000);
     return () => clearInterval(interval);
   }, []);
 
@@ -59,11 +78,11 @@ export default function Home() {
             src={profile}
             alt="Lannik1"
             className={`w-48 h-48 rounded-full mb-6 border-4 object-cover ${
-              isLive ? 'border-green-500' : 'border-red-500'
+              isLiveTwitch || isLiveKick ? 'border-green-500' : 'border-red-500'
             }`}
           />
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            {isLive ? (
+            {isLiveTwitch || isLiveKick ? (
               <div className="bg-zinc-900/80 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-2 border border-green-500">
                 <Pulse color="green" />
                 AO VIVO
@@ -118,11 +137,20 @@ export default function Home() {
 
         <SocialButton
           href="https://twitch.tv/lannik1"
-          isLive={isLive}
+          isLive={isLiveTwitch}
           bgColor="#6441a5"
           icon={<FaTwitch size={24} className="text-white" />}
         >
-          {isLive ? '🟢 AO VIVO NA TWITCH' : 'Twitch'}
+          {isLiveTwitch ? '🟢 AO VIVO NA TWITCH' : 'Twitch'}
+        </SocialButton>
+
+        <SocialButton
+          href="https://kick.com/lannik"
+          isLive={isLiveKick}
+          bgColor="#53fc18"
+          icon={<Image src={kick} alt="Kick" width={24} height={24} className="text-white" />}
+        >
+          {isLiveKick ? '🟢 AO VIVO NA KICK' : 'Kick'}
         </SocialButton>
 
         <SocialButton
