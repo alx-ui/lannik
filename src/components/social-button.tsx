@@ -5,6 +5,7 @@ interface SocialButtonProps {
   children: ReactNode;
   isLive?: boolean;
   bgColor?: string;
+  textColor?: string;
   icon?: ReactNode;
   className?: string; // Nova prop
 }
@@ -14,6 +15,7 @@ export default function SocialButton({
   children,
   isLive,
   bgColor = '#171817',
+  textColor = '#ffffff',
   icon,
   className,
 }: SocialButtonProps) {
@@ -27,7 +29,9 @@ export default function SocialButton({
         ${isLive ? 'animate-pulse' : ''} ${className}`}
     >
       {icon}
-      <span className="text-center flex-1">{children}</span>
+      <span className="text-center flex-1" style={{ color: textColor }}>
+        {children}
+      </span>
     </a>
   );
 }
