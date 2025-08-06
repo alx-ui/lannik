@@ -97,6 +97,28 @@ export default function Home() {
         </div>
         <h1 className="text-2xl font-bold mb-8">@lannik1</h1>
 
+        {isLiveTwitch && (
+          <SocialButton
+            href="https://twitch.tv/lannik1"
+            isLive={isLiveTwitch}
+            bgColor="#6441a5"
+            icon={<FaTwitch size={24} className="text-white" />}
+          >
+            🟢 AO VIVO NA TWITCH
+          </SocialButton>
+        )}
+
+        {isLiveKick && (
+          <SocialButton
+            href="https://kick.com/lannik"
+            isLive={isLiveKick}
+            bgColor="#53fc18"
+            icon={<Image src={kick} alt="Kick" width={24} height={24} className="text-white" />}
+          >
+            🟢 AO VIVO NA KICK
+          </SocialButton>
+        )}
+
         <div className="hidden min-[320px]:grid grid-cols-2 gap-4 w-full mb-4">
           <SocialButtonSquare
             href="https://onabet.cxclick.com/visit/?bta=120399&brand=onabet"
@@ -135,23 +157,27 @@ export default function Home() {
           </SocialButton>
         </div>
 
-        <SocialButton
-          href="https://twitch.tv/lannik1"
-          isLive={isLiveTwitch}
-          bgColor="#6441a5"
-          icon={<FaTwitch size={24} className="text-white" />}
-        >
-          {isLiveTwitch ? '🟢 AO VIVO NA TWITCH' : 'Twitch'}
-        </SocialButton>
+        {!isLiveTwitch && (
+          <SocialButton
+            href="https://twitch.tv/lannik1"
+            isLive={isLiveTwitch}
+            bgColor="#6441a5"
+            icon={<FaTwitch size={24} className="text-white" />}
+          >
+            Twitch
+          </SocialButton>
+        )}
 
-        <SocialButton
-          href="https://kick.com/lannik"
-          isLive={isLiveKick}
-          bgColor="#53fc18"
-          icon={<Image src={kick} alt="Kick" width={24} height={24} className="text-white" />}
-        >
-          {isLiveKick ? '🟢 AO VIVO NA KICK' : 'Kick'}
-        </SocialButton>
+        {!isLiveKick && (
+          <SocialButton
+            href="https://kick.com/lannik"
+            isLive={isLiveKick}
+            bgColor="#53fc18"
+            icon={<Image src={kick} alt="Kick" width={24} height={24} className="text-white" />}
+          >
+            Kick
+          </SocialButton>
+        )}
 
         <SocialButton
           href="https://x.com/lannik_"
