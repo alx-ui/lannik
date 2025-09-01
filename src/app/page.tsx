@@ -20,9 +20,15 @@ export default function Home() {
   useEffect(() => {
     const checkTwitchStatus = async () => {
       try {
-        const response = await fetch('/.netlify/functions/twitchStatus');
+        // Tenta primeiro a função Netlify
+        let response = await fetch('/.netlify/functions/twitchStatus');
 
-        // Verifica se a resposta é válida e se o content-type é JSON
+        // Se falhar, tenta a API route do Next.js como fallback
+        if (!response.ok) {
+          console.warn('Netlify function failed, trying Next.js API route...');
+          response = await fetch('/api/twitch-status');
+        }
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -45,9 +51,15 @@ export default function Home() {
 
     const checkKickStatus = async () => {
       try {
-        const response = await fetch('/.netlify/functions/kickStatus');
+        // Tenta primeiro a função Netlify
+        let response = await fetch('/.netlify/functions/kickStatus');
 
-        // Verifica se a resposta é válida e se o content-type é JSON
+        // Se falhar, tenta a API route do Next.js como fallback
+        if (!response.ok) {
+          console.warn('Kick Netlify function failed, trying Next.js API route...');
+          response = await fetch('/api/kick-status');
+        }
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
