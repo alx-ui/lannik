@@ -4,8 +4,8 @@ import { FaXTwitter, FaTwitch, FaInstagram, FaTiktok, FaYoutube, FaDiscord, FaWh
 
 import Image from 'next/image';
 
+import afun from '@/assets/afun.png';
 import kick from '@/assets/kick.png';
-import onabet from '@/assets/onabet.png';
 import profile from '@/assets/profile.jpg';
 import { Pulse } from '@/components/pulse';
 import { Skeleton } from '@/components/skeleton';
@@ -21,6 +21,18 @@ export default function Home() {
     const checkTwitchStatus = async () => {
       try {
         const response = await fetch('/.netlify/functions/twitchStatus');
+
+        // Verifica se a resposta é válida e se o content-type é JSON
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          console.error('Resposta não é JSON:', await response.text());
+          throw new Error('Resposta não é JSON válido');
+        }
+
         const data = await response.json();
         setIsLiveTwitch(data.isLive);
       } catch (error) {
@@ -34,6 +46,18 @@ export default function Home() {
     const checkKickStatus = async () => {
       try {
         const response = await fetch('/.netlify/functions/kickStatus');
+
+        // Verifica se a resposta é válida e se o content-type é JSON
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          console.error('Resposta não é JSON:', await response.text());
+          throw new Error('Resposta não é JSON válido');
+        }
+
         const data = await response.json();
         setIsLiveKick(data.isLive);
       } catch (error) {
@@ -121,11 +145,11 @@ export default function Home() {
 
         <div className="hidden min-[320px]:grid grid-cols-2 gap-4 w-full mb-4">
           <SocialButtonSquare
-            href="https://onabet.cxclick.com/visit/?bta=120399&brand=onabet"
+            href="https://260520.afun.bet.br/a/9umt4n"
             bgColor="#161a1e"
-            icon={<Image src={onabet} alt="Onabet" width={96} height={96} className="text-white" />}
+            icon={<Image src={afun} alt="Afun" width={96} height={96} className="text-white" />}
           >
-            Onabet
+            Afun.bet.br
           </SocialButtonSquare>
 
           <SocialButtonSquare
@@ -140,11 +164,11 @@ export default function Home() {
 
         <div className="min-[320px]:hidden w-full">
           <SocialButton
-            href="https://onabet.cxclick.com/visit/?bta=120399&brand=onabet"
+            href="https://260520.afun.bet.br/a/9umt4n"
             bgColor="#161a1e"
-            icon={<Image src={onabet} alt="Onabet" width={48} height={48} className="text-white" />}
+            icon={<Image src={afun} alt="Afun" width={48} height={48} className="text-white" />}
           >
-            Onabet
+            Afun.bet.br
           </SocialButton>
 
           <SocialButton
