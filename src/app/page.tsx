@@ -1,6 +1,15 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { FaXTwitter, FaTwitch, FaInstagram, FaTiktok, FaYoutube, FaDiscord, FaWhatsapp } from 'react-icons/fa6';
+import {
+  FaXTwitter,
+  FaTwitch,
+  FaInstagram,
+  FaTiktok,
+  FaYoutube,
+  FaDiscord,
+  FaWhatsapp,
+  FaTelegram,
+} from 'react-icons/fa6';
 
 import Image from 'next/image';
 
@@ -193,6 +202,14 @@ export default function Home() {
           </SocialButton>
         </div>
 
+        <SocialButton
+          href="https://t.me/+3SaQs3imz2oyYTgx"
+          bgColor="#0088cc"
+          icon={<FaTelegram size={24} className="text-white" />}
+        >
+          🎯 Bancas Grátis
+        </SocialButton>
+
         {!isLiveTwitch && (
           <SocialButton
             href="https://twitch.tv/lannik1"
@@ -256,10 +273,7 @@ export default function Home() {
         </SocialButton>
       </div>
       <footer className="w-full text-center py-4 text-sm text-muted-foreground mt-auto">
-        © {new Date().getFullYear()} Lannik1 by{' '}
-        <a href="https://ialexanderbrito.dev" target="_blank" rel="noopener noreferrer">
-          ialexanderbrito
-        </a>
+        © {new Date().getFullYear()} Lannik1
       </footer>
     </main>
   );
