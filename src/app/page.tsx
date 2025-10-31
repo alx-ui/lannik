@@ -13,7 +13,7 @@ import {
 
 import Image from 'next/image';
 
-import afun from '@/assets/afun.png';
+import brasildasorte from '@/assets/brasildasorte.png';
 import kick from '@/assets/kick.png';
 import profile from '@/assets/profile.jpg';
 import { Pulse } from '@/components/pulse';
@@ -166,11 +166,11 @@ export default function Home() {
 
         <div className="hidden min-[320px]:grid grid-cols-2 gap-4 w-full mb-4">
           <SocialButtonSquare
-            href="https://260520.afun.bet.br/a/9umt4n"
-            bgColor="#161a1e"
-            icon={<Image src={afun} alt="Afun" width={96} height={96} className="text-white" />}
+            href="https://go.aff.brasildasorte.bet.br/qexm6qww"
+            bgColor="#111827"
+            icon={<Image src={brasildasorte} alt="Brasil Da Sorte" width={96} height={96} className="text-white" />}
           >
-            Afun.bet.br
+            Brasil Da Sorte
           </SocialButtonSquare>
 
           <SocialButtonSquare
@@ -185,11 +185,11 @@ export default function Home() {
 
         <div className="min-[320px]:hidden w-full">
           <SocialButton
-            href="https://260520.afun.bet.br/a/9umt4n"
-            bgColor="#161a1e"
-            icon={<Image src={afun} alt="Afun" width={48} height={48} className="text-white" />}
+            href="https://go.aff.brasildasorte.bet.br/qexm6qww"
+            bgColor="#111827"
+            icon={<Image src={brasildasorte} alt="Brasil Da Sorte" width={48} height={48} className="text-white" />}
           >
-            Afun.bet.br
+            Brasil Da Sorte
           </SocialButton>
 
           <SocialButton
