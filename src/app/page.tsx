@@ -13,6 +13,7 @@ import {
 
 import Image from 'next/image';
 
+import apostaganha from '@/assets/apostaganha.png';
 import brasildasorte from '@/assets/brasildasorte.png';
 import kick from '@/assets/kick.png';
 import profile from '@/assets/profile.jpg';
@@ -122,9 +123,7 @@ export default function Home() {
           <Image
             src={profile}
             alt="Lannik1"
-            className={`w-48 h-48 rounded-full mb-6 border-4 object-cover ${
-              isLiveTwitch || isLiveKick ? 'border-green-500' : 'border-red-500'
-            }`}
+            className={`w-48 h-48 rounded-full mb-6 border-4 object-cover ${isLiveTwitch || isLiveKick ? 'border-green-500' : 'border-red-500'}`}
           />
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
             {isLiveTwitch || isLiveKick ? (
@@ -166,11 +165,12 @@ export default function Home() {
 
         <div className="hidden min-[320px]:grid grid-cols-2 gap-4 w-full mb-4">
           <SocialButtonSquare
-            href="https://go.aff.brasildasorte.bet.br/qexm6qww"
-            bgColor="#111827"
-            icon={<Image src={brasildasorte} alt="Brasil Da Sorte" width={96} height={96} className="text-white" />}
+            href="https://tinyurl.com/LannikAG"
+            bgColor="#ffffff"
+            icon={<Image src={apostaganha} alt="ApostaGanha" width={96} height={96} className="text-black" />}
+            textColor="#000000"
           >
-            Brasil Da Sorte
+            ApostaGanha
           </SocialButtonSquare>
 
           <SocialButtonSquare
@@ -185,11 +185,12 @@ export default function Home() {
 
         <div className="min-[320px]:hidden w-full">
           <SocialButton
-            href="https://go.aff.brasildasorte.bet.br/qexm6qww"
-            bgColor="#111827"
-            icon={<Image src={brasildasorte} alt="Brasil Da Sorte" width={48} height={48} className="text-white" />}
+            href="https://tinyurl.com/LannikAG"
+            bgColor="#ffffff"
+            icon={<Image src={apostaganha} alt="ApostaGanha" width={48} height={48} className="text-black" />}
+            textColor="#000000"
           >
-            Brasil Da Sorte
+            ApostaGanha
           </SocialButton>
 
           <SocialButton
@@ -201,6 +202,14 @@ export default function Home() {
             🎯 Bancas Grátis
           </SocialButton>
         </div>
+
+        <SocialButton
+          href="https://go.aff.brasildasorte.bet.br/qexm6qww"
+          bgColor="#111827"
+          icon={<Image src={brasildasorte} alt="Brasil Da Sorte" width={48} height={48} className="text-white" />}
+        >
+          Brasil da Sorte
+        </SocialButton>
 
         <SocialButton
           href="https://t.me/+3SaQs3imz2oyYTgx"
