@@ -13,8 +13,6 @@ import {
 
 import Image from 'next/image';
 
-import apostaganha from '@/assets/apostaganha.png';
-import brasildasorte from '@/assets/brasildasorte.png';
 import kick from '@/assets/kick.png';
 import profile from '@/assets/profile.jpg';
 import { Pulse } from '@/components/pulse';
@@ -165,15 +163,6 @@ export default function Home() {
 
         <div className="hidden min-[320px]:grid grid-cols-2 gap-4 w-full mb-4">
           <SocialButtonSquare
-            href="https://tinyurl.com/LannikAG"
-            bgColor="#ffffff"
-            icon={<Image src={apostaganha} alt="ApostaGanha" width={96} height={96} className="text-black" />}
-            textColor="#000000"
-          >
-            ApostaGanha
-          </SocialButtonSquare>
-
-          <SocialButtonSquare
             href="https://chat.whatsapp.com/F2kQeOsXctq8ElzhOSzQFx"
             bgColor="#25D366"
             icon={<FaWhatsapp size={48} className="text-white" />}
@@ -181,18 +170,18 @@ export default function Home() {
           >
             🎯 Bancas Grátis
           </SocialButtonSquare>
+
+          <SocialButtonSquare
+            href="https://t.me/+3SaQs3imz2oyYTgx"
+            bgColor="#0088cc"
+            icon={<FaTelegram size={48} className="text-white" />}
+            className="animate-pulse border-2 border-blue-500"
+          >
+            🎯 Bancas Grátis
+          </SocialButtonSquare>
         </div>
 
         <div className="min-[320px]:hidden w-full">
-          <SocialButton
-            href="https://tinyurl.com/LannikAG"
-            bgColor="#ffffff"
-            icon={<Image src={apostaganha} alt="ApostaGanha" width={48} height={48} className="text-black" />}
-            textColor="#000000"
-          >
-            ApostaGanha
-          </SocialButton>
-
           <SocialButton
             href="https://chat.whatsapp.com/F2kQeOsXctq8ElzhOSzQFx"
             bgColor="#25D366"
@@ -201,23 +190,15 @@ export default function Home() {
           >
             🎯 Bancas Grátis
           </SocialButton>
+
+          <SocialButton
+            href="https://t.me/+3SaQs3imz2oyYTgx"
+            bgColor="#0088cc"
+            icon={<FaTelegram size={24} className="text-white" />}
+          >
+            🎯 Bancas Grátis
+          </SocialButton>
         </div>
-
-        <SocialButton
-          href="https://go.aff.brasildasorte.bet.br/qexm6qww"
-          bgColor="#111827"
-          icon={<Image src={brasildasorte} alt="Brasil Da Sorte" width={48} height={48} className="text-white" />}
-        >
-          Brasil da Sorte
-        </SocialButton>
-
-        <SocialButton
-          href="https://t.me/+3SaQs3imz2oyYTgx"
-          bgColor="#0088cc"
-          icon={<FaTelegram size={24} className="text-white" />}
-        >
-          🎯 Bancas Grátis
-        </SocialButton>
 
         {!isLiveTwitch && (
           <SocialButton
